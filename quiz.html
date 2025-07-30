@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quiz da Guardiã Digital</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        .quiz-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            font-family: var(--fonte-secundaria);
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .options button, .result button, .back-button {
+            background-color: var(--cor-terciaria);
+            color: var(--cor-primaria);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: var(--fonte-secundaria);
+            transition: background-color 0.3s;
+        }
+        .options button:hover, .result button:hover, .back-button:hover {
+            background-color: var(--cor-hover);
+            color: var(--cor-secundaria);
+        }
+        .result-image {
+            width: 100px;
+            margin: 0 auto 10px auto;
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo quiz-container" id="quiz"></section>
+        <img class="apresentacao__imagem" src="./assets/anastacia.jpg" alt="Foto da Anastácia Guardiã Digital">
+    </main>
+    <footer class="rodape">Desenvolvido por Guardiã Digital.</footer>
+    <script>
+        const originalQuizData = [
+          { question: "1. Você recebeu mensagem de um desconhecido. O que fazer?", options: ["Responder educadamente", "Ignorar e contar para um adulto", "Aceitar e mandar foto"], answer: 1 },
+          { question: "2. Alguém mandou uma mensagem que te deixou triste. O que fazer?", options: ["Ficar em silêncio", "Contar para alguém de confiança", "Brigar com a pessoa"], answer: 1 },
+          { question: "3. Senhas seguras devem conter:", options: ["Seu nome ou data de nascimento", "Números, letras e símbolos", "A palavra 'senha'"], answer: 1 },
+          { question: "4. Você viu um vídeo estranho no YouTube Kids. O que fazer?", options: ["Assistir até o fim", "Ignorar e assistir outro", "Parar e avisar um adulto"], answer: 2 },
+          { question: "5. É legal compartilhar foto dos colegas sem permissão?", options: ["Sim, se for engraçada", "Não, é falta de respeito", "Sim, se for num grupo de amigos"], answer: 1 },
+          { question: "6. O que fazer com comentários maldosos online?", options: ["Responder na mesma moeda", "Ignorar, bloquear e avisar um adulto", "Dar risada"], answer: 1 },
+          { question: "7. Você deve falar sua senha para:", options: ["Seus amigos mais próximos", "Ninguém além dos pais ou responsáveis", "Colegas da escola"], answer: 1 },
+          { question: "8. Ao criar uma conta, você deve:", options: ["Usar seu nome completo", "Pedir ajuda a um adulto", "Fazer sozinho e rápido"], answer: 1 },
+          { question: "9. Um perfil com foto estranha e nome esquisito te adiciona. O que fazer?", options: ["Aceitar e conversar", "Ignorar e bloquear", "Perguntar quem é"], answer: 1 },
+          { question: "10. Para ser um Guardião Digital, você precisa:", options: ["Ajudar os amigos, ser respeitoso e pedir ajuda", "Usar a internet sozinho", "Ficar online o tempo todo"], answer: 0 }
+        ];
+
+        let quizData = [...originalQuizData];
+        let current = 0;
+        let score = 0;
+        const quiz = document.getElementById("quiz");
+
+        function shuffle(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+
+        function showQuestion() {
+          const q = quizData[current];
+          const shuffledOptions = q.options.map((opt, i) => ({ opt, index: i }));
+          shuffle(shuffledOptions);
+
+          quiz.innerHTML = `
+            <div class="question">${q.question}</div>
+            <div class="options">
+              ${shuffledOptions.map(({ opt, index }) => `<button onclick="checkAnswer(${index === q.answer})">${opt}</button>`).join('')}
+            </div>`;
+        }
+
+        function checkAnswer(isCorrect) {
+          if (isCorrect) score++;
+          current++;
+          if (current < quizData.length) showQuestion();
+          else showResult();
+        }
+
+        function showResult() {
+          const resultIcon = score >= 7 ? "./assets/obrigada.png" : "./assets/desculpe.png";
+          const resultMessage = score >= 7
+            ? `Parabéns! Você é um Guardião Digital!<br>Pontuação: ${score}/10`
+            : `Que pena! Você tirou ${score}/10.<br><br>Tente novamente para virar um Guardião Digital!`;
+
+          quiz.innerHTML = `
+            <div class="question">
+              <img src="${resultIcon}" alt="Resultado" class="result-image">
+              ${resultMessage}
+            </div>
+            <div class="options">
+              <button onclick='restart()'>Recomeçar</button>
+              <a href='index.html'><button class='back-button'>Voltar ao Início</button></a>
+            </div>`;
+        }
+
+        function restart() {
+          current = 0;
+          score = 0;
+          quizData = [...originalQuizData];
+          showQuestion();
+        }
+
+        restart();
+    </script>
+</body>
+</html>
