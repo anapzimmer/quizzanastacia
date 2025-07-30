@@ -1,36 +1,72 @@
-# Criando Minha Primeira Página Web 🌐
+# 🛡️ Quiz da Guardiã Digital Anastácia
 
-Este projeto tem como objetivo a criação de uma página web estática utilizando **HTML** e **CSS**, baseada em uma atividade do curso de desenvolvimento web. Durante o processo, aprendemos a estruturar e estilizar a página sem interatividade, focando na parte visual e layout utilizando as ferramentas do HTML e CSS. 🚀
+Bem-vindo(a) ao projeto **Guardião Digital**, um quiz interativo e educativo voltado para crianças! 👧🧒  
+Aqui, os pequenos aprendem como navegar com segurança pela internet, com a ajuda da nossa heroína digital, **Anastácia**.
 
-## Tecnologias Usadas 🛠️
+---
 
-- **HTML**: Linguagem de marcação usada para estruturar o conteúdo da página. 📝
-- **CSS**: Folhas de estilo em cascata usadas para estilizar e organizar a apresentação do conteúdo HTML. 🎨
+## 🎯 Objetivo
 
-## Estrutura do Projeto 📂
+Ensinar de forma lúdica e interativa os principais cuidados que as crianças devem ter ao utilizar a internet, como:
+- Segurança nas redes sociais
+- Criação de senhas seguras
+- Como reagir ao cyberbullying
+- Proteção contra desconhecidos online
 
-Este projeto inclui:
+---
 
-- **index.html**: O arquivo principal de HTML que contém a estrutura básica da página. 📄
-- **styles.css**: O arquivo de CSS responsável por estilizar a página e definir o layout utilizando Flexbox, classes, cabeçalhos e rodapés. ✨
-- **README.md**: Este arquivo, que fornece informações sobre o projeto. 📚
-- **assets/images**: Pasta onde você pode armazenar imagens, como uma captura de tela do seu projeto. 🖼️
+## 🧠 Como funciona
 
-## Funcionalidades ⚙️
+Este quiz foi desenvolvido com:
+- **HTML** + **CSS** + **JavaScript**
+- Sem necessidade de instalação: roda direto no navegador!
+- Música de fundo infantil suave 🎵
+- Pontuação automática e mensagens personalizadas ao final do jogo
 
-- Layout básico utilizando **Flexbox** para centralização e alinhamento de elementos. 📏
-- Estilização do **cabeçalho** e **rodapé** para dar uma aparência mais limpa e organizada. 🖥️
-- Uso de **variáveis CSS** para facilitar a manutenção das cores e fontes do projeto. 🎨
-- Implementação de **responsividade** para garantir que a página se ajuste a diferentes tamanhos de tela. 📱
+---
 
-## Captura de Tela 📸
+## 🚀 Como usar
 
-Aqui está uma captura de tela da página web criada:
+1. **Clone ou baixe este repositório**
+2. Coloque todos os arquivos em uma única pasta
+3. Abra o arquivo `index.html` no seu navegador
+4. Clique em “Iniciar” para abrir o quiz
+5. Divirta-se e aprenda com a Anastácia! ✨
 
-![Captura de Tela](https://github.com/anapzimmer/portifolio/blob/main/caputuratela.png)
+---
 
-## Como Rodar o Projeto 🚀
 
-1. Clone o repositório para sua máquina local:
-   ```bash
-   git clone https://github.com/anapzimmer/portifolio.git
+## 🔊 Recursos e Funcionalidades
+
+- ✅ Interface responsiva e colorida
+- ✅ Alternativas embaralhadas a cada jogo
+- ✅ Resultados com ícones e mensagens
+- ✅ Música ambiente com controle automático
+- ✅ Leve e acessível para todos os dispositivos
+
+---
+
+## 👶 Público-alvo
+
+Crianças de 6 a 12 anos, pais e educadores que desejam promover o uso consciente da internet.
+
+---
+
+## 💡 Autor
+
+Projeto educacional desenvolvido por Ana Paula Petkowicz Zimmer como parte das Atividades Extensionistas do curso de Engenharia da Computação, com foco em segurança digital para o público infantil.
+
+---
+
+## 📚 Licença
+
+Este projeto é livre para uso educacional. Compartilhe e incentive o uso responsável da internet! 🌐✨
+
+---
+
+## ✨ Contribua
+
+Sugestões de melhorias, novos temas ou adaptações são sempre bem-vindos!  
+Abra uma *issue* ou envie um *pull request* 🤝
+
+
